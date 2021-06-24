@@ -70,7 +70,7 @@ def init():
     M = "I bought 100 doge coins."
     hash1 = SHA256.new(M.encode('utf8'))
 
-    p = open('BobPriv.pem', 'r')
+    p = open('BobPriv.pem', 'r')  
     bobPrivKey = RSA.import_key(p.read(), passphrase="####")
     BobSignature = pkcs1_15.new(bobPrivKey).sign(hash1)
     p.close()   
